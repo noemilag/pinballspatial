@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#050820">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Pinball Spatial">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <style>:root{color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -354,6 +354,39 @@ header{background:linear-gradient(180deg,#141c58,#0a0e30);border-bottom:2px soli
   .tile.tsnd{width:48px}
 }
 @media (min-width:761px){.pcard{width:164px}.carousel{padding:10px 8px 14px;gap:18px;justify-content:safe center}.carousel>.pcard:first-child{margin-left:auto}.carousel>.pcard:last-child{margin-right:auto}}
+
+/* ---------- home v4: frameless tables, full-height mobile ---------- */
+#home{display:flex;flex-direction:column}
+.home-in{flex:1 0 auto;min-height:0;justify-content:flex-start;width:100%;min-width:0;max-width:100%!important;margin:0}
+.carwrap{min-width:0}
+.carwrap{background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+@media (min-width:761px){
+  .home-in{justify-content:center;gap:26px}
+  .home-in>.carwrap{width:min(1200px,calc(100vw - 48px));padding:8px 0}
+  .arrow,.dots{display:none!important}
+  .carousel{flex-wrap:wrap;justify-content:center;overflow:visible;scroll-snap-type:none;padding:30px 0 10px!important;gap:44px 22px}
+  .carousel>.pcard:first-child,.carousel>.pcard:last-child{margin-left:0;margin-right:0}
+  .pcard{width:176px;margin-top:0}
+  .tiles{margin-top:10px}
+}
+@media (max-width:760px){
+  #home{padding-top:calc(env(safe-area-inset-top,0px) + 6px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 18px)}
+  .home-in{gap:0}
+  .logo{padding-top:4px}
+  .logo h1{font-size:clamp(44px,14vw,70px)}
+  #home{overflow-x:hidden}
+  .home-in>.carwrap{margin-top:auto;padding:0;width:auto!important;align-self:stretch;margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)))!important;margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)))!important}
+  .home-in>.tiles,.home-in>.logo{width:100%}
+  .pcard{--cw:min(64vw,270px);width:var(--cw);margin-top:40px}
+  .carousel{padding:6px calc(50% - min(32vw,135px)) 12px;gap:16px}
+  .pcard .pbadge{width:120px;top:-40px}
+  .pcard .pn{font-size:19px;margin-top:12px}
+  .pcard .pn small{font-size:14px}
+  .dots{margin-top:10px}
+  .playbig{margin-top:auto}
+  .tiles{margin-top:28px}
+}
+@media (max-width:760px) and (max-height:700px){.pcard{--cw:min(54vw,230px)}.carousel{padding-left:calc(50% - min(27vw,115px));padding-right:calc(50% - min(27vw,115px))}.tiles{margin-top:18px}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">

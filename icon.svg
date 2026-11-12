@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Icône Pinball Spatial PS">
+<defs>
+ <linearGradient id="edge" x1="0" y1="0" x2=".2" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#00f5ef"/><stop offset=".48" stop-color="#087bff"/><stop offset="1" stop-color="#f00bdb"/></linearGradient>
+ <radialGradient id="space"><stop stop-color="#102d72"/><stop offset="1" stop-color="#020b27"/></radialGradient>
+ <linearGradient id="warm" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ff14c8"/><stop offset=".45" stop-color="#ff7a15"/><stop offset="1" stop-color="#fff500"/></linearGradient>
+ <linearGradient id="letters" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#d9e4ff"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffb700"/><stop offset=".45" stop-color="#ff7218"/><stop offset="1" stop-color="#fa0ac6"/></linearGradient>
+ <linearGradient id="planet" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#22e9ff"/><stop offset=".4" stop-color="#007ee9"/><stop offset="1" stop-color="#08114e"/></linearGradient>
+ <radialGradient id="ball" cx=".32" cy=".2" r=".82"><stop stop-color="#fff"/><stop offset=".17" stop-color="#a5d3ff"/><stop offset=".48" stop-color="#3764bd"/><stop offset=".8" stop-color="#071a58"/><stop offset="1" stop-color="#ff9b1c"/></radialGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="10"/></filter>
+ <clipPath id="clip"><rect x="36" y="36" width="952" height="952" rx="220"/></clipPath>
+</defs>
+<rect x="14" y="14" width="996" height="996" rx="240" fill="url(#edge)"/>
+<rect x="36" y="36" width="952" height="952" rx="220" fill="url(#space)"/>
+<g clip-path="url(#clip)">
+ <path d="M280 1040 Q550 680 1100 660 L1100 1100Z" fill="url(#planet)"/>
+ <g fill="#003a8b" opacity=".55"><ellipse cx="735" cy="735" rx="48" ry="17" transform="rotate(-18 735 735)"/><ellipse cx="850" cy="700" rx="36" ry="12"/><ellipse cx="650" cy="790" rx="35" ry="13" transform="rotate(-25 650 790)"/><ellipse cx="505" cy="933" rx="49" ry="20"/></g>
+ <path d="M295 575 C-85 520 105 275 618 208" fill="none" stroke="url(#warm)" stroke-width="48" stroke-linecap="round"/>
+ <path d="M275 573 Q443 603 510 737" fill="none" stroke="#00cfff" stroke-width="43" opacity=".85"/>
+ <g fill="#fff"><circle cx="163" cy="150" r="3"/><circle cx="270" cy="123" r="3"/><circle cx="329" cy="220" r="3"/><circle cx="475" cy="146" r="3"/><circle cx="912" cy="245" r="3"/><circle cx="126" cy="654" r="3"/><circle cx="205" cy="675" r="3"/><circle cx="910" cy="540" r="3"/><circle cx="355" cy="687" r="3"/></g>
+ <g fill="#ffed32"><path d="M382 78 Q389 142 439 150 Q390 157 382 215 Q374 157 325 150 Q374 142 382 78Z"/><path d="M894 495 Q900 543 935 551 Q900 559 894 604 Q888 559 854 551 Q888 543 894 495Z"/></g>
+ <g fill="#fff"><path d="M220 167 Q225 196 251 201 Q225 206 220 235 Q215 206 189 201 Q215 196 220 167Z"/><path d="M886 256 Q891 283 915 288 Q891 293 886 321 Q881 293 857 288 Q881 283 886 256Z"/></g>
+ <!-- Rocket -->
+ <g transform="translate(570 105) rotate(-22 160 110)">
+  <path d="M76 155 L-22 193 L54 114Z" fill="#ffe52c"/>
+  <path d="M104 75 Q50 65 12 105 L85 116Z" fill="#ff7b0d"/>
+  <path d="M118 166 Q93 222 35 230 L69 155Z" fill="#ff710d"/>
+  <path d="M78 109 Q187 20 306 102 Q219 209 85 167 Q64 142 78 109Z" fill="url(#letters)"/>
+  <circle cx="217" cy="112" r="41" fill="#061335"/><circle cx="217" cy="112" r="31" fill="#008bf5"/><circle cx="207" cy="100" r="12" fill="#5bf6ff"/>
+  <path d="M84 147 Q55 141 32 161 Q51 174 88 166Z" fill="#ff7300"/>
+ </g>
+ <!-- PS monogram drawn as paths, fully editable -->
+ <g transform="translate(0 15) skewX(-10)">
+  <path d="M340 341 H497 Q588 341 588 414 Q588 489 488 492 H406 L386 606 H288Z M422 397 L413 443 H484 Q509 443 509 421 Q509 397 480 397Z" fill="url(#letters)" fill-rule="evenodd"/>
+  <path d="M679 339 H864 Q894 339 895 365 L893 397 H725 Q699 397 699 416 Q699 433 724 433 H816 Q897 433 889 506 Q881 604 762 604 H601 L610 548 H772 Q796 548 797 528 Q798 512 772 512 H686 Q598 512 609 435 Q621 339 679 339Z" fill="url(#gold)"/>
+ </g>
+ <!-- Flippers -->
+ <g filter="url(#glow)" opacity=".8"><path d="M175 743 L383 859" stroke="#00eaff" stroke-width="72" stroke-linecap="round"/><path d="M845 743 L637 859" stroke="#00eaff" stroke-width="72" stroke-linecap="round"/></g>
+ <g transform="rotate(27 277 787)"><rect x="130" y="744" width="310" height="88" rx="44" fill="#ff7b00" stroke="#ffe331" stroke-width="9"/><rect x="152" y="757" width="266" height="61" rx="31" fill="url(#letters)"/><circle cx="180" cy="787" r="18" fill="#122a60" stroke="#7795cb" stroke-width="5"/></g>
+ <g transform="rotate(-27 747 787)"><rect x="592" y="744" width="310" height="88" rx="44" fill="#ff7b00" stroke="#ffe331" stroke-width="9"/><rect x="614" y="757" width="266" height="61" rx="31" fill="url(#letters)"/><circle cx="852" cy="787" r="18" fill="#122a60" stroke="#7795cb" stroke-width="5"/></g>
+ <circle cx="512" cy="745" r="92" fill="#00cfff" opacity=".6" filter="url(#glow)"/><circle cx="512" cy="745" r="81" fill="url(#ball)" stroke="#d5f8ff" stroke-width="7"/><ellipse cx="478" cy="708" rx="22" ry="37" transform="rotate(36 478 708)" fill="#fff" opacity=".88"/>
+</g>
+</svg>
