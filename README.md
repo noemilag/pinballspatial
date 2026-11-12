@@ -8,9 +8,11 @@ Ouvre `index.html` dans un navigateur. Aucune installation : tout tient dans ce 
 
 Pour le mettre en ligne gratuitement, active **GitHub Pages** dans les réglages du dépôt (Settings → Pages → branche `main`, dossier racine). Le jeu sera alors accessible à `https://noemilag.github.io/pinballspatial/`.
 
+Sur iPhone ou Android, ouvre ce lien puis choisis « Ajouter à l'écran d'accueil » : le jeu s'installe comme une app, avec son icône.
+
 ## Comment ça marche
 
-- **Accueil** : choisis une table dans le carrousel (une table vide ou 5 tables prêtes), puis touche **Jouer**.
+- **Accueil** : choisis une table dans le carrousel (une table vide ou 5 tables prêtes), puis touche **Jouer**. Le bouton du son est à côté de « Mes tables ».
 - **Créer** : glisse des pièces depuis le tiroir du bas, déplace-les, tourne-les et change leur taille. Tire la barre « Ambiance » vers le haut pour changer le décor et la musique.
 - **Jouer** : 3 billes. Garde la barre d'espace (ou le bouton LANCER) enfoncée, puis lâche. Les flèches ← → (ou les deux moitiés de l'écran) bougent les batteurs.
 

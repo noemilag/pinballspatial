@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050820">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Pinball Spatial">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <style>:root{color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -322,6 +329,31 @@ aside#inv{background:linear-gradient(180deg,#141c58,#0a0e30);border-color:rgba(5
 #empty .card h2{font:900 italic 22px var(--body);-webkit-text-fill-color:#fff;color:#fff;background:none;filter:none;text-shadow:0 0 14px rgba(56,232,255,.7)}
 .card h2{font-style:italic;font-family:var(--body);font-weight:900}
 header{background:linear-gradient(180deg,#141c58,#0a0e30);border-bottom:2px solid rgba(56,232,255,.45)}
+
+/* ---------- home v3: wider carousel, lighter controls ---------- */
+.home-in{max-width:none;align-items:center}
+.home-in>*{width:min(560px,100%)}
+.home-in>.carwrap{width:min(1180px,calc(100vw - 48px));margin:0}
+.home-in>.dots{width:auto}
+.carwrap{padding:10px 56px;border-radius:28px}
+.carousel{padding-left:calc(50% - 75px);padding-right:calc(50% - 75px)}
+#carPrev{left:10px}#carNext{right:10px}
+.playbig{width:min(260px,70%);font-size:26px;min-height:58px;padding:12px 26px}
+.playbig svg.i{width:22px;height:22px}
+.tiles{display:flex;gap:10px;justify-content:center}
+.tile{flex:1 1 0;flex-direction:row;min-height:52px!important;padding:8px 14px!important;gap:10px;font-size:13px!important;border-radius:16px;line-height:1.1;max-width:220px}
+.tile svg.i{width:22px!important;height:22px!important}
+.tile.tsnd{flex:none;width:52px;padding:0!important;justify-content:center}
+.badge{top:-9px;right:-7px}
+@media (max-width:760px){
+  .home-in>.carwrap{width:100vw;margin:0}
+  .carwrap{background:none;border:0;border-radius:0;padding:4px 0}
+  .arrow{display:none}
+  .playbig{width:min(220px,64%);font-size:22px;min-height:52px}
+  .tile{font-size:12px!important;padding:6px 10px!important;min-height:48px!important}
+  .tile.tsnd{width:48px}
+}
+@media (min-width:761px){.pcard{width:164px}.carousel{padding:10px 8px 14px;gap:18px;justify-content:safe center}.carousel>.pcard:first-child{margin-left:auto}.carousel>.pcard:last-child{margin-right:auto}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -428,7 +460,6 @@ header{background:linear-gradient(180deg,#141c58,#0a0e30);border-bottom:2px soli
 
 <div id="home">
   <canvas id="homeBg" aria-hidden="true"></canvas>
-  <button class="hsnd" id="hSound" aria-label="Son"><svg class="i"><use href="#i-snd"/></svg></button>
   <div class="home-in">
     <div class="logo">
       <svg class="swoosh" viewBox="0 0 400 150" aria-hidden="true">
@@ -438,9 +469,7 @@ header{background:linear-gradient(180deg,#141c58,#0a0e30);border-bottom:2px soli
         <path d="M60 22 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill="#fff"/><path d="M372 92 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z" fill="#ffd43b"/>
       </svg>
       <h1><span class="w1">PINBALL</span><span class="w2">SPATIAL</span></h1>
-      <p class="tagline">Construis ton flipper dans l'espace</p>
     </div>
-    <div class="pickhead"><svg class="i"><use href="#i-rocket"/></svg>Choisis ta table</div>
     <div class="carwrap">
       <button class="arrow" id="carPrev" aria-label="Table précédente"><svg class="i"><use href="#i-left"/></svg></button>
       <div class="carousel" id="presets"></div>
@@ -449,8 +478,9 @@ header{background:linear-gradient(180deg,#141c58,#0a0e30);border-bottom:2px soli
     <div class="dots" id="dots"></div>
     <button class="gloss playbig" id="hPlay"><svg class="i"><use href="#i-play"/></svg><span id="hPlayTx">Jouer</span></button>
     <div class="tiles">
-      <button class="tile" id="hCreate"><svg class="i"><use href="#i-build"/></svg><span>Créer<br>une table</span></button>
-      <button class="tile" id="hMine"><svg class="i"><use href="#i-save"/></svg><span>Mes<br>tables</span><b class="badge" id="mineCount" hidden>0</b></button>
+      <button class="tile" id="hCreate"><svg class="i"><use href="#i-build"/></svg><span>Créer une table</span></button>
+      <button class="tile" id="hMine"><svg class="i"><use href="#i-save"/></svg><span>Mes tables</span><b class="badge" id="mineCount" hidden>0</b></button>
+      <button class="tile tsnd" id="hSound" aria-label="Son"><svg class="i"><use href="#i-snd"/></svg></button>
     </div>
   </div>
 </div>
