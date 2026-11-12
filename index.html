@@ -358,6 +358,7 @@ header{background:linear-gradient(180deg,#141c58,#0a0e30);border-bottom:2px soli
 @media (min-width:761px){.pcard{width:164px}.carousel{padding:10px 8px 14px;gap:18px;justify-content:safe center}.carousel>.pcard:first-child{margin-left:auto}.carousel>.pcard:last-child{margin-right:auto}}
 
 /* ---------- home v4: frameless tables, full-height mobile ---------- */
+@media (display-mode:standalone){html{height:100vh}#home{bottom:auto;height:100vh}#homeBg{height:100vh}}
 #home{display:flex;flex-direction:column}
 .home-in{flex:1 0 auto;min-height:0;justify-content:flex-start;width:100%;min-width:0;max-width:100%!important;margin:0}
 .carwrap{min-width:0}
@@ -372,7 +373,7 @@ header{background:linear-gradient(180deg,#141c58,#0a0e30);border-bottom:2px soli
   .tiles{margin-top:10px}
 }
 @media (max-width:760px){
-  #home{padding-top:calc(env(safe-area-inset-top,0px) + 6px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 18px)}
+  #home{padding-top:calc(env(safe-area-inset-top,0px) + 34px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 18px)}
   .home-in{gap:0}
   .logo{padding-top:4px}
   .logo h1{font-size:clamp(44px,14vw,70px)}
@@ -1179,7 +1180,7 @@ $('hMine').onclick=()=>{renderMine();$('mineDlg').hidden=false;};
 $('mineClose').onclick=()=>$('mineDlg').hidden=true;
 function updMineCount(){readLocal();const n=mine.length+local.length;$('mineCount').textContent=n;$('mineCount').hidden=!n;}
 function drawHomeBg(){
-  const c=$('homeBg'),W2=innerWidth,H2=innerHeight,d=Math.min(devicePixelRatio||1,2);c.width=W2*d;c.height=H2*d;const g=c.getContext('2d');g.setTransform(d,0,0,d,0,0);paintScene(g,W2,H2);}
+  const c=$('homeBg'),W2=c.clientWidth||innerWidth,H2=Math.max(c.clientHeight,innerHeight),d=Math.min(devicePixelRatio||1,2);c.width=W2*d;c.height=H2*d;const g=c.getContext('2d');g.setTransform(d,0,0,d,0,0);paintScene(g,W2,H2);}
 function paintScene(g,W2,H2){
   g.fillStyle='#050820';g.fillRect(0,0,W2,H2);
   const glow=(x,y,r,col)=>{const gr=g.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,col);gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.fillRect(x-r,y-r,r*2,r*2);};
