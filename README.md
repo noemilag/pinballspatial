@@ -29,6 +29,14 @@ Cosmique, Futuriste, Apocalyptique et Mission spatiale. Chacune a son décor, se
 - Dans la version publiée sur claude.ai, les tables sauvées sont gardées en ligne et on peut les partager avec un code.
 - Ouvert directement depuis ce dépôt (ou GitHub Pages), le jeu sauve les tables dans le navigateur de l'appareil seulement. Le partage par code n'est pas disponible dans ce cas.
 
+## Mises à jour
+
+Quand une nouvelle version est publiée, un bouton « Mettre à jour » apparaît en haut de l'écran (aussi dans l'app installée sur l'écran d'accueil). Un toucher recharge le jeu, sans avoir à réinstaller l'icône.
+
+## Modifier le jeu
+
+Le code du jeu est dans `src/game.html`. Après une modification, lance `python3 build.py` : ça reconstruit `index.html` et donne un nouveau numéro de version dans `version.json`.
+
 ## Technique
 
 Un seul fichier HTML avec du CSS et du JavaScript intégrés, sans dépendance. Le rendu et la physique utilisent Canvas 2D, et la musique la Web Audio API. Les polices viennent de Google Fonts (Orbitron et Exo 2).

@@ -1310,5 +1310,31 @@ addEventListener('hashchange',()=>{const h=location.hash;const k=parseCode(h);if
 })();
 </script>
 
+<style>
+#psUpdate{position:fixed;z-index:100;left:50%;top:calc(env(safe-area-inset-top,0px) + 10px);transform:translate(-50%,-140%);transition:transform .35s cubic-bezier(.2,1.4,.4,1);
+  display:flex;align-items:center;gap:10px;border:0;cursor:pointer;border-radius:999px;padding:10px 20px 10px 14px;
+  font:900 italic 15px "Exo 2","Segoe UI",system-ui,sans-serif;letter-spacing:.03em;text-transform:uppercase;color:#2b1500;white-space:nowrap;
+  background:linear-gradient(180deg,#fff58a,#ffd726 45%,#ffae00);box-shadow:inset 0 2px 0 rgba(255,255,255,.7),0 4px 0 #a35a00,0 0 26px rgba(255,190,30,.6)}
+#psUpdate.show{transform:translate(-50%,0)}
+#psUpdate svg{width:20px;height:20px;fill:none;stroke:#2b1500;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+@media (prefers-reduced-motion:reduce){#psUpdate{transition:none}}
+</style>
+<button id="psUpdate" type="button" aria-live="polite" hidden><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg>Mettre à jour</button>
+<script>
+(function(){
+  var CURRENT='20261112022645',btn=document.getElementById('psUpdate'),latest=null,last=0;
+  function check(){
+    var now=Date.now();if(now-last<20000)return;last=now;
+    fetch('version.json?t='+now,{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
+      if(!j||!j.version||j.version===CURRENT)return;latest=j.version;btn.hidden=false;requestAnimationFrame(function(){btn.classList.add('show')});
+    }).catch(function(){});
+  }
+  btn.addEventListener('click',function(){location.replace(location.pathname+'?v='+encodeURIComponent(latest||Date.now()));});
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)check();});
+  addEventListener('pageshow',check);addEventListener('focus',check);
+  setInterval(check,5*60*1000);check();
+})();
+</script>
+
 </body>
 </html>
